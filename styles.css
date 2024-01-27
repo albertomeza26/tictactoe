@@ -20,14 +20,15 @@
     }
     
     .tictacframe {
-    margin-right: 75px;
-    margin-bottom: 75px;
-    margin-left: 75px;
+    margin-right: 50px;
+    margin-bottom: 200px;
+    margin-left: 50px;
     align-self: center;
+    justify-content: center;
     display: grid;
-    width: 1200px;
-    height: 830px;
-    grid-template: 1fr / 1fr 750px 1fr;
+    width: 1000px;
+    height: 500px;
+    grid-template: 1fr / 1fr 2fr 1fr;
     }
     
     form {
@@ -36,17 +37,18 @@
     margin: 10px;
     }
     
-    .playeronelogo {
+    .playeronelogo, .playertwologo {
     display: flex;
     border: none;
     align-items: center;
     }
     
-    .playertwologo {
-    display: flex;
-    border: none;
-    align-items: center;
+    .playeronelogo:hover, .playertwologo:hover, .startGame > button:hover:enabled,
+    .rematch > button:hover, .restart > button:hover {
+    scale: 1.1;
+    transition: scale .3s;
     }
+    
     
     .playerimage {
     height: 30px;
@@ -67,6 +69,7 @@
     font-size: 3rem;
     font-weight: 600;
     color: rgb(230, 57, 70);
+    position: static;
     }
     
     #player-one-name, #player-two-name {
@@ -74,6 +77,8 @@
     font-family: Arial, Helvetica, sans-serif;
     color: rgb(241, 250, 238);
     font-size: 1.5rem;
+    display: inline-block;
+    position: relative;
     }
     
     input {
@@ -85,59 +90,70 @@
     margin-right: 10px;
     }
     
-    .result {
+    .result-one, .result-two {
     font-family: Arial, Helvetica, sans-serif;
     color: rgb(241, 250, 238);
     font-size: 1rem;
     margin-top: 10px;
     font-weight: 600;
+    visibility: hidden;
     }
     
+    .move {
+    visibility: visible;
+    }
     .game-area {
-    background-color: rgb(241, 250, 238);
     display: grid;
-    grid-template: 750px 1fr / 1fr;
+    justify-content: center;
+    padding: 20px;
+    gap: 20px;
+    grid-template: 500px 1fr / 1fr;
     }
     
     .tictacblock {
     justify-self: center;
     align-self: center;
+    align-content: center;
     display: grid;
-    width: 700px;
-    height: 700px;
+    width: 500px;
+    height: 500px;
     grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
-    gap: 50px;
+    gap: 20px;
     background-color: rgb(29, 53, 87);
+    border: 20px solid rgb(241, 250, 238);;
     }
     
     .button {
     background-color: rgb(168, 218, 220);
     color: rgb(230, 57, 70);
-    font-size: 9rem;
+    font-size: 5rem;
     font-family: Nunito;
     font-weight: 900;
     border: none;
     }
     
-    .button:hover {
-    background-color: rgb(168, 218, 220, .5);
+    .button:hover:enabled {
+    background-color: rgb(168, 218, 220, .5) !important;
     }
     
     .gameButtons {
     display: grid;
     grid-template: 1fr / 1fr 1fr 1fr;
-    gap: 20px;
+    gap: 50px;
+    align-items: baseline;
+    margin-top: 50px;
+    background-color: rgb(69, 123, 157);
     }
     
     .startGame > button, .rematch > button, .restart > button {
-    height: 50px;
-    width: 200px;
+    height: 35px;
+    width: 100px;
     border: 2px solid rgb(241, 250, 238);
     color: rgb(241, 250, 238);
     border-radius: 10px;
     font-family: Arial, Helvetica, sans-serif;
     font-variant: small-caps;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     }
     
     .startGame, .rematch, .restart {
@@ -151,6 +167,7 @@
     justify-content: center;
     align-items: center;
     font-size: small;
+    margin-top: 75px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     }
     
@@ -162,3 +179,4 @@
     button {
     cursor: pointer;
     }
+    
