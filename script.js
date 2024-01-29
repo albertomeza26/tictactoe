@@ -103,12 +103,12 @@ function announceWinnerTwo() {
 }
 
 let gamePlay = (function() {
-    jugar.disabled = true
     if (playerOne.length === 0 || playerTwo.length === 0) {
         alert("Please enter both player names");
     }
     else {
         chosePlayer();
+        jugar.disabled = true
         let one = []
         let two = [];
         let three = [];
